@@ -11,8 +11,8 @@ html, body {
     height: 100%;
     overflow: hidden;
     font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
-    background: #1a0e08;
-    color: #f5e8d0;
+    background: #f5f0e8;
+    color: #1e1408;
     user-select: none;
     -webkit-user-select: none;
     overscroll-behavior: none;
@@ -30,35 +30,35 @@ img {
 
 /* ===== CSS VARIABLES ===== */
 :root {
-    --c-bg:           #1a0e08;
-    --c-bg-card:      #2a1810;
-    --c-bg-elevated:  #3a2418;
-    --c-bg-modal:     #261508;
-    --c-gold:         #c9972a;
-    --c-gold-light:   #e8b84a;
-    --c-gold-dim:     #8a6018;
-    --c-text:         #f5e8d0;
-    --c-text-muted:   #a08060;
-    --c-text-dim:     #6a5040;
-    --c-border:       rgba(201, 151, 42, 0.25);
-    --c-border-med:   rgba(201, 151, 42, 0.45);
-    --c-border-strong:rgba(201, 151, 42, 0.7);
-    --c-success:      #6ab04a;
-    --c-success-bg:   rgba(106, 176, 74, 0.12);
-    --c-warn:         #e09030;
-    --c-warn-bg:      rgba(224, 144, 48, 0.12);
-    --c-partial:      #5090c0;
-    --c-partial-bg:   rgba(80, 144, 192, 0.12);
-    --c-fail:         #c04040;
-    --c-fail-bg:      rgba(192, 64, 64, 0.12);
-    --c-danger:       #cc4444;
+    --c-bg:           #f5f0e8;
+    --c-bg-card:      #ffffff;
+    --c-bg-elevated:  #ede8dc;
+    --c-bg-modal:     #ffffff;
+    --c-gold:         #b07820;
+    --c-gold-light:   #8a5c10;
+    --c-gold-dim:     #c9972a;
+    --c-text:         #1e1408;
+    --c-text-muted:   #7a5a38;
+    --c-text-dim:     #a88868;
+    --c-border:       rgba(176, 120, 32, 0.25);
+    --c-border-med:   rgba(176, 120, 32, 0.45);
+    --c-border-strong:rgba(176, 120, 32, 0.7);
+    --c-success:      #3a8020;
+    --c-success-bg:   rgba(58, 128, 32, 0.1);
+    --c-warn:         #c07010;
+    --c-warn-bg:      rgba(192, 112, 16, 0.1);
+    --c-partial:      #3070a0;
+    --c-partial-bg:   rgba(48, 112, 160, 0.1);
+    --c-fail:         #a02020;
+    --c-fail-bg:      rgba(160, 32, 32, 0.1);
+    --c-danger:       #cc3333;
     --font-heading:   'Georgia', 'Times New Roman', serif;
     --radius-sm:      6px;
     --radius:         12px;
     --radius-lg:      20px;
     --transition:     0.25s ease;
-    --shadow-card:    0 4px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,151,42,0.15);
-    --shadow-modal:   0 8px 48px rgba(0,0,0,0.7), 0 0 0 1px rgba(201,151,42,0.3);
+    --shadow-card:    0 2px 16px rgba(0,0,0,0.08), 0 0 0 1px rgba(176,120,32,0.15);
+    --shadow-modal:   0 8px 32px rgba(0,0,0,0.12), 0 0 0 1px rgba(176,120,32,0.25);
 }
 
 /* ===== SCREENS ===== */
@@ -146,8 +146,8 @@ img {
 
 .library-bg {
     background:
-        radial-gradient(ellipse at 50% 0%, rgba(201,151,42,0.08) 0%, transparent 60%),
-        linear-gradient(180deg, #1a0e08 0%, #150b05 100%);
+        radial-gradient(ellipse at 50% 0%, rgba(176,120,32,0.1) 0%, transparent 60%),
+        linear-gradient(180deg, #f5f0e8 0%, #ede8dc 100%);
 }
 
 .main-container {
@@ -356,7 +356,7 @@ img {
 .btn-secondary:hover {
     border-color: var(--c-border-med);
     color: var(--c-text);
-    background: rgba(255,255,255,0.04);
+    background: rgba(0,0,0,0.04);
 }
 
 .btn-icon {
@@ -456,7 +456,7 @@ img {
 
 /* ===== ROUND SCREEN ===== */
 #screen-round {
-    background: #0e0906;
+    background: #f5f0e8;
     overflow: hidden;
 }
 
@@ -472,7 +472,7 @@ img {
     align-items: center;
     justify-content: space-between;
     padding: 10px 16px;
-    background: rgba(26,14,8,0.95);
+    background: rgba(245,240,232,0.97);
     border-bottom: 1px solid var(--c-border);
     flex-shrink: 0;
     gap: 12px;
@@ -526,7 +526,7 @@ img {
 .search-container {
     flex-shrink: 0;
     padding: 10px 14px 12px;
-    background: rgba(26,14,8,0.97);
+    background: rgba(245,240,232,0.99);
     border-top: 1px solid var(--c-border);
     display: flex;
     flex-direction: column;
@@ -600,7 +600,7 @@ body.is-mobile .round-header {
 }
 
 .search-clear-btn:hover {
-    background: rgba(255,255,255,0.08);
+    background: rgba(0,0,0,0.06);
     color: var(--c-text);
 }
 
@@ -627,7 +627,7 @@ body.is-mobile .round-header {
 .search-item {
     padding: 10px 14px;
     cursor: pointer;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
     transition: background var(--transition);
     display: flex;
     flex-direction: column;
@@ -755,7 +755,7 @@ body.is-mobile .round-header {
 
 .results-score-block {
     width: 100%;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.04);
     border-radius: var(--radius-sm);
     padding: 12px 16px;
     display: flex;
@@ -785,7 +785,7 @@ body.is-mobile .round-header {
 }
 
 .total-line {
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(0,0,0,0.1);
     padding-top: 6px;
     margin-top: 2px;
 }
@@ -960,7 +960,7 @@ body.is-mobile .round-header {
 }
 
 .modal-close:hover {
-    background: rgba(255,255,255,0.08);
+    background: rgba(0,0,0,0.06);
     color: var(--c-text);
 }
 

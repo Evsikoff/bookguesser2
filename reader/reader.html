@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' blob:; script-src 'self'; style-src 'self' blob: 'unsafe-inline'; img-src 'self' blob: data:; connect-src 'self' blob: data: *; frame-src blob: data:; object-src blob: data:; form-action 'none';">
 <title>E-Book Reader</title>
 <style>
 :root {
     --active-bg: rgba(0, 0, 0, .05);
-}
-@supports (color-scheme: light dark) {
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --active-bg: rgba(255, 255, 255, .1);
-        }
-    }
 }
 html {
     height: 100%;
@@ -320,8 +313,8 @@ body.game-mode .icon-ltr         { display: none !important; }
 
 /* Larger, more prominent nav buttons for game mode */
 body.game-mode #nav-bar {
-    background: rgba(26, 14, 8, 0.92);
-    border-top: 1px solid rgba(201, 151, 42, 0.3);
+    background: transparent;
+    border-top: none;
     padding: 8px 16px;
     height: 60px;
 }
@@ -331,9 +324,9 @@ body.game-mode #right-button {
     height: 56px;
     padding: 8px;
     border-radius: 10px;
-    background: rgba(201, 151, 42, 0.12);
-    border: 1.5px solid rgba(201, 151, 42, 0.35);
-    color: #e8b84a;
+    background: rgba(176, 120, 32, 0.12);
+    border: 1.5px solid rgba(176, 120, 32, 0.4);
+    color: #8a5c10;
     flex-shrink: 0;
     transition: background 0.2s ease;
 }
@@ -341,8 +334,8 @@ body.game-mode #left-button:hover,
 body.game-mode #right-button:hover,
 body.game-mode #left-button:active,
 body.game-mode #right-button:active {
-    background: rgba(201, 151, 42, 0.28);
-    border-color: rgba(201, 151, 42, 0.65);
+    background: rgba(176, 120, 32, 0.22);
+    border-color: rgba(176, 120, 32, 0.65);
 }
 body.game-mode #left-button .icon,
 body.game-mode #right-button .icon {
