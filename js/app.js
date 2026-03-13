@@ -1088,6 +1088,37 @@ function setupEventListeners() {
             searchDropdown.classList.remove('open')
         }
     })
+
+    // Reposition dropdown when virtual keyboard resizes viewport
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', positionSearchDropdown)
+    }
+}
+
+function positionSearchDropdown() {
+    const dropdown = document.getElementById('search-dropdown')
+    if (!dropdown.classList.contains('open')) return
+    const group = document.querySelector('.search-input-group')
+    if (!group) return
+    const rect = group.getBoundingClientRect()
+    const vvh = window.visualViewport ? window.visualViewport.height : window.innerHeight
+    const isMobile = document.body.classList.contains('is-mobile')
+
+    dropdown.style.left  = rect.left + 'px'
+    dropdown.style.right = (window.innerWidth - rect.right) + 'px'
+    dropdown.style.width = 'auto'
+
+    if (isMobile) {
+        const top = rect.bottom
+        dropdown.style.top       = top + 'px'
+        dropdown.style.bottom    = 'auto'
+        dropdown.style.maxHeight = Math.max(80, vvh - top - 8) + 'px'
+    } else {
+        const bottom = vvh - rect.top
+        dropdown.style.top       = 'auto'
+        dropdown.style.bottom    = bottom + 'px'
+        dropdown.style.maxHeight = Math.max(80, rect.top - 8) + 'px'
+    }
 }
 
 function renderSearchDropdown(results) {
@@ -1099,6 +1130,7 @@ function renderSearchDropdown(results) {
         if (q.length >= 2) {
             dropdown.innerHTML = '<div class="search-no-results">Ничего не найдено</div>'
             dropdown.classList.add('open')
+            positionSearchDropdown()
         } else {
             dropdown.classList.remove('open')
         }
@@ -1106,6 +1138,7 @@ function renderSearchDropdown(results) {
     }
 
     dropdown.classList.add('open')
+    positionSearchDropdown()
 
     results.forEach(book => {
         const item = document.createElement('div')
