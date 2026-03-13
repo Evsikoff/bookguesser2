@@ -119,15 +119,25 @@ class Reader {
             })
         })
         this.view.renderer.setStyles?.(getCSS(this.style))
-        // In game mode, force scrolled layout before first render
-        if (gameMode) this.view.renderer.setAttribute('flow', 'scrolled')
+        // In game mode, force scrolled layout and hide scrollbar before first render
+        if (gameMode) {
+            this.view.renderer.setAttribute('flow', 'scrolled')
+            this.view.renderer.setAttribute('no-scrollbar', '')
+        }
         if (initialFraction != null) await this.view.init({ lastLocation: { fraction: initialFraction } })
         else this.view.renderer.next()
 
         $('#header-bar').style.visibility = 'visible'
         $('#nav-bar').style.visibility = 'visible'
-        $('#left-button').addEventListener('click', () => this.view.goLeft())
-        $('#right-button').addEventListener('click', () => this.view.goRight())
+        if (gameMode) {
+            $('#left-button').ariaLabel = 'Scroll up'
+            $('#right-button').ariaLabel = 'Scroll down'
+            $('#left-button').addEventListener('click', () => this.view.prev())
+            $('#right-button').addEventListener('click', () => this.view.next())
+        } else {
+            $('#left-button').addEventListener('click', () => this.view.goLeft())
+            $('#right-button').addEventListener('click', () => this.view.goRight())
+        }
 
         const slider = $('#progress-slider')
         slider.dir = book.dir
