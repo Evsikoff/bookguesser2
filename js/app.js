@@ -159,6 +159,9 @@ async function init() {
         })
     } catch {}
 
+    // Detect device type (mobile/desktop)
+    detectDevice()
+
     // Setup all button handlers
     setupEventListeners()
 
@@ -893,6 +896,7 @@ function renderResultsBanner(result) {
             streakBlock.classList.remove('hidden')
             setText('results-streak-len', result.streak)
             setText('results-multiplier', '×' + result.multiplier.toFixed(1))
+            setText('results-bonus-score', '+' + (result.roundScore - result.baseScore))
             setText('results-final-score', '+' + result.roundScore)
         } else {
             streakBlock.classList.add('hidden')
@@ -1140,6 +1144,22 @@ function selectBookFromSearch(book) {
 }
 
 // ===== UTILITIES =====
+function detectDevice() {
+    let isMobile = false
+    try {
+        if (ysdk && ysdk.deviceInfo) {
+            isMobile = ysdk.deviceInfo.isMobile() || ysdk.deviceInfo.type === 'mobile' || ysdk.deviceInfo.type === 'tablet'
+        } else {
+            isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent)
+        }
+    } catch {
+        isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent)
+    }
+    if (isMobile) {
+        document.body.classList.add('is-mobile')
+    }
+}
+
 function setText(id, text) {
     const el = document.getElementById(id)
     if (el) el.textContent = text

@@ -536,6 +536,16 @@ img {
     overscroll-behavior: contain;
 }
 
+body.is-mobile .search-container {
+    order: -1;
+    border-top: none;
+    border-bottom: 1px solid var(--c-border);
+}
+
+body.is-mobile .round-header {
+    order: -2;
+}
+
 .search-wrapper {
     position: relative;
     display: flex;

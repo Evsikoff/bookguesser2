@@ -1,0 +1,10 @@
+127.0.0.1 - - [13/Mar/2026 22:04:56] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Mar/2026 22:04:56] code 404, message File not found
+127.0.0.1 - - [13/Mar/2026 22:04:56] "GET /sdk.js HTTP/1.1" 404 -
+127.0.0.1 - - [13/Mar/2026 22:04:56] "GET /js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Mar/2026 22:04:56] "GET /css/game.css HTTP/1.1" 200 -
+127.0.0.1 - - [13/Mar/2026 22:04:56] "GET /data/books.json HTTP/1.1" 200 -
+127.0.0.1 - - [13/Mar/2026 22:04:56] "GET /data/authors.json HTTP/1.1" 200 -
+127.0.0.1 - - [13/Mar/2026 22:04:56] "GET /sfx/start.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Mar/2026 22:04:56] "GET /sfx/10second.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Mar/2026 22:04:56] "GET /data/files/1.fb2 HTTP/1.1" 200 -
