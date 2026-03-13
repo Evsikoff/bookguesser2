@@ -609,9 +609,18 @@ body.is-mobile .round-header {
     height: 16px;
 }
 
+.search-input-group {
+    position: relative;
+}
+
 .search-dropdown {
     display: none;
     flex-direction: column;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    z-index: 100;
     background: var(--c-bg-elevated);
     border: 1px solid var(--c-border-med);
     border-radius: var(--radius);
@@ -622,6 +631,11 @@ body.is-mobile .round-header {
 
 .search-dropdown.open {
     display: flex;
+}
+
+body.is-mobile .search-dropdown {
+    top: 100%;
+    bottom: auto;
 }
 
 .search-item {

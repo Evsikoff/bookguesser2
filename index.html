@@ -136,29 +136,31 @@
         </div>
 
         <div class="search-container">
-            <div class="search-wrapper">
-                <svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
-                    <path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <input
-                    id="search-input"
-                    type="text"
-                    placeholder="Название книги или автор..."
-                    class="search-input"
-                    autocomplete="off"
-                    spellcheck="false"
-                    aria-label="Поиск книги"
-                    aria-autocomplete="list"
-                    aria-controls="search-dropdown"
-                >
-                <button id="btn-search-clear" class="search-clear-btn hidden" aria-label="Очистить поиск">
-                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <div class="search-input-group">
+                <div class="search-wrapper">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+                        <path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
-                </button>
+                    <input
+                        id="search-input"
+                        type="text"
+                        placeholder="Название книги или автор..."
+                        class="search-input"
+                        autocomplete="off"
+                        spellcheck="false"
+                        aria-label="Поиск книги"
+                        aria-autocomplete="list"
+                        aria-controls="search-dropdown"
+                    >
+                    <button id="btn-search-clear" class="search-clear-btn hidden" aria-label="Очистить поиск">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div id="search-dropdown" class="search-dropdown" role="listbox" aria-label="Результаты поиска"></div>
             </div>
-            <div id="search-dropdown" class="search-dropdown" role="listbox" aria-label="Результаты поиска"></div>
             <div id="selected-book-label" class="selected-book-label hidden"></div>
             <button id="btn-confirm" class="btn-primary btn-confirm hidden">
                 Подтвердить
