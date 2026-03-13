@@ -176,6 +176,7 @@ async function initSdk() {
     try {
         if (typeof YaGames !== 'undefined') {
             ysdk = await YaGames.init()
+            console.log('ysdk.environment.i18n.lang:', ysdk.environment.i18n.lang)
         } else {
             ysdk = createMockSdk()
         }
