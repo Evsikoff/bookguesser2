@@ -546,7 +546,7 @@ async function startRound(retryState) {
         fraction = retryState.startFraction
     } else {
         book = selectNextBook()
-        fraction = null   // will be set after reader reports sections
+        fraction = 1/3 + Math.random() * 1/3
     }
 
     currentRound = {
@@ -597,27 +597,15 @@ function waitForReaderMessage(type, timeoutMs = 20000) {
     })
 }
 
-async function loadReaderAndNavigate(book, knownFraction) {
+async function loadReaderAndNavigate(book, fraction) {
     const iframe = document.getElementById('reader-iframe')
     // Pass just the filename — reader builds the absolute path to avoid encoding issues
-    const readerUrl = `reader/reader.html?file=${encodeURIComponent(book.file)}&game=1`
+    const readerUrl = `reader/reader.html?file=${encodeURIComponent(book.file)}&game=1&fraction=${fraction}`
 
     iframe.src = readerUrl
 
     try {
-        const msg = await waitForReaderMessage('bookLoaded')
-        const totalLocations = msg.totalLocations || 0
-
-        let fraction = knownFraction
-        if (fraction === null || fraction === undefined) {
-            fraction = computeStartFraction(totalLocations)
-        }
-        currentRound.startFraction = fraction
-        playerData.currentRound.startFraction = fraction
-
-        // Tell reader to navigate
-        iframe.contentWindow.postMessage({ type: 'navigate', fraction }, '*')
-
+        await waitForReaderMessage('bookLoaded')
         // Short pause for rendering
         await sleep(800)
     } catch (e) {
