@@ -699,7 +699,8 @@ function calculateRoundResult(targetBook, selectedBook) {
     if (selectedBook.author_id === targetBook.author_id) {
         return { type: 'author', baseScore: 50 }
     }
-    if (selectedBook.origin_country && selectedBook.origin_country === targetBook.origin_country) {
+    if (selectedBook.origin_country && selectedBook.origin_country === targetBook.origin_country
+        && targetBook.origin_country !== 11) {
         return { type: 'country', baseScore: 25 }
     }
     if (Math.abs((selectedBook.publication_year || 0) - (targetBook.publication_year || 0)) < 31) {
@@ -796,6 +797,7 @@ function showRoundScreen() {
     selectedBook = null
 
     showScreen('screen-round')
+    document.getElementById('reader-iframe').focus()
 }
 
 function showResultsScreen(result) {

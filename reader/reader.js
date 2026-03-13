@@ -202,8 +202,8 @@ class Reader {
     }
     #handleKeydown(event) {
         const k = event.key
-        if (k === 'ArrowLeft' || k === 'h') this.view.goLeft()
-        else if(k === 'ArrowRight' || k === 'l') this.view.goRight()
+        if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'h') this.view.goLeft()
+        else if (k === 'ArrowRight' || k === 'ArrowDown' || k === 'l') this.view.goRight()
     }
     #onLoad({ detail: { doc } }) {
         doc.addEventListener('keydown', this.#handleKeydown.bind(this))
