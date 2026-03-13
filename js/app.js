@@ -99,8 +99,8 @@ function createMockPlayer() {
 function createMockPayments() {
     return {
         getCatalog:      async () => [
-            { id: 'energy_100',       title: '100 энергии', price: '99 RUB',  priceCurrencyCode: 'RUB', getPriceCurrencyImage: () => null },
-            { id: 'energy_100_promo', title: '100 энергии', price: '49 RUB',  priceCurrencyCode: 'RUB', getPriceCurrencyImage: () => null },
+            { id: 'energy_100',       title: '100 энергии', price: '90 ян',  priceCurrencyCode: 'YAN', getPriceCurrencyImage: () => null },
+            { id: 'energy_100_promo', title: '100 энергии', price: '45 ян',  priceCurrencyCode: 'YAN', getPriceCurrencyImage: () => null },
         ],
         purchase:        async ({ id }) => ({ productID: id }),
         consumePurchase: async (token)  => {},
