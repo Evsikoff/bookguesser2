@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/user/Documents/BookGuesser2 -type f ! -path */node_modules/* ! -path */data/files/* -name .* -o -name README* -o -name package*)",
+      "Bash(find /c/Users/user/Documents/BookGuesser2 -type d -not -path */node_modules* -not -path */files*)"
+    ]
+  }
+}

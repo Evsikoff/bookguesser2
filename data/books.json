@@ -1,0 +1,1467 @@
+{
+"books": [
+	{
+		"id" : 1,
+		"title" : "Анна Каренина",
+		"author_id" : 1,
+		"origin_country" : 11,
+		"publication_year" : 1877,
+		"file" : "1.fb2"
+	},
+	{
+		"id" : 2,
+		"title" : "Война и мир",
+		"author_id" : 1,
+		"origin_country" : 11,
+		"publication_year" : 1869,
+		"file" : "2.fb2"
+	},
+	{
+		"id" : 3,
+		"title" : "Отцы и дети",
+		"author_id" : 2,
+		"origin_country" : 11,
+		"publication_year" : 1862,
+		"file" : "3.fb2"
+	},
+	{
+		"id" : 4,
+		"title" : "Обломов",
+		"author_id" : 3,
+		"origin_country" : 11,
+		"publication_year" : 1859,
+		"file" : "4.fb2"
+	},
+	{
+		"id" : 5,
+		"title" : "Идиот",
+		"author_id" : 4,
+		"origin_country" : 11,
+		"publication_year" : 1869,
+		"file" : "5.fb2"
+	},
+	{
+		"id" : 6,
+		"title" : "Дворянское гнездо",
+		"author_id" : 2,
+		"origin_country" : 11,
+		"publication_year" : 1859,
+		"file" : "6.fb2"
+	},
+	{
+		"id" : 7,
+		"title" : "Госпожа Бовари",
+		"author_id" : 5,
+		"origin_country" : 3,
+		"publication_year" : 1857,
+		"file" : "7.fb2"
+	},
+	{
+		"id" : 8,
+		"title" : "Евгений Онегин",
+		"author_id" : 6,
+		"origin_country" : 11,
+		"publication_year" : 1833,
+		"file" : "8.fb2"
+	},
+	{
+		"id" : 9,
+		"title" : "Братья Карамазовы",
+		"author_id" : 4,
+		"origin_country" : 11,
+		"publication_year" : 1880,
+		"file" : "9.fb2"
+	},
+	{
+		"id" : 10,
+		"title" : "Воскресение",
+		"author_id" : 1,
+		"origin_country" : 11,
+		"publication_year" : 1899,
+		"file" : "10.fb2"
+	},
+	{
+		"id" : 11,
+		"title" : "Бесы",
+		"author_id" : 4,
+		"origin_country" : 11,
+		"publication_year" : 1872,
+		"file" : "11.fb2"
+	},
+	{
+		"id" : 13,
+		"title" : "Обрыв",
+		"author_id" : 3,
+		"origin_country" : 11,
+		"publication_year" : 1869,
+		"file" : "13.fb2"
+	},
+	{
+		"id" : 15,
+		"title" : "Подросток",
+		"author_id" : 4,
+		"origin_country" : 11,
+		"publication_year" : 1875,
+		"file" : "15.fb2"
+	},
+	{
+		"id" : 16,
+		"title" : "Униженные и оскорблённые",
+		"author_id" : 4,
+		"origin_country" : 11,
+		"publication_year" : 1861,
+		"file" : "16.fb2"
+	},
+	{
+		"id" : 17,
+		"title" : "Семейное счастье",
+		"author_id" : 1,
+		"origin_country" : 11,
+		"publication_year" : 1859,
+		"file" : "17.fb2"
+	},
+	{
+		"id" : 18,
+		"title" : "Что делать?",
+		"author_id" : 7,
+		"origin_country" : 11,
+		"publication_year" : 1863,
+		"file" : "18.fb2"
+	},
+	{
+		"id" : 19,
+		"title" : "Господа Головлёвы",
+		"author_id" : 8,
+		"origin_country" : 11,
+		"publication_year" : 1880,
+		"file" : "19.fb2"
+	},
+	{
+		"id" : 20,
+		"title" : "Пошехонская старина",
+		"author_id" : 8,
+		"origin_country" : 11,
+		"publication_year" : 1890,
+		"file" : "20.fb2"
+	},
+	{
+		"id" : 21,
+		"title" : "Преступление и наказание",
+		"author_id" : 4,
+		"origin_country" : 11,
+		"publication_year" : 1866,
+		"file" : "21.fb2"
+	},
+	{
+		"id" : 22,
+		"title" : "Бедные люди",
+		"author_id" : 4,
+		"origin_country" : 11,
+		"publication_year" : 1846,
+		"file" : "22.fb2"
+	},
+	{
+		"id" : 24,
+		"title" : "Петербургские повести",
+		"author_id" : 9,
+		"origin_country" : 11,
+		"publication_year" : 1842,
+		"file" : "24.fb2"
+	},
+	{
+		"id" : 25,
+		"title" : "Шинель",
+		"author_id" : 9,
+		"origin_country" : 11,
+		"publication_year" : 1842,
+		"file" : "25.fb2"
+	},
+	{
+		"id" : 26,
+		"title" : "Белые ночи",
+		"author_id" : 4,
+		"origin_country" : 11,
+		"publication_year" : 1848,
+		"file" : "26.fb2"
+	},
+	{
+		"id" : 27,
+		"title" : "Игрок",
+		"author_id" : 4,
+		"origin_country" : 11,
+		"publication_year" : 1867,
+		"file" : "27.fb2"
+	},
+	{
+		"id" : 28,
+		"title" : "Герой нашего времени",
+		"author_id" : 10,
+		"origin_country" : 11,
+		"publication_year" : 1840,
+		"file" : "28.fb2"
+	},
+	{
+		"id" : 29,
+		"title" : "Мёртвые души",
+		"author_id" : 9,
+		"origin_country" : 11,
+		"publication_year" : 1842,
+		"file" : "29.fb2"
+	},
+	{
+		"id" : 30,
+		"title" : "Кто виноват?",
+		"author_id" : 11,
+		"origin_country" : 11,
+		"publication_year" : 1847,
+		"file" : "30.fb2"
+	},
+	{
+		"id" : 31,
+		"title" : "Записки охотника",
+		"author_id" : 2,
+		"origin_country" : 11,
+		"publication_year" : 1852,
+		"file" : "31.fb2"
+	},
+	{
+		"id" : 32,
+		"title" : "Невский проспект",
+		"author_id" : 9,
+		"origin_country" : 11,
+		"publication_year" : 1835,
+		"file" : "32.fb2"
+	},
+	{
+		"id" : 33,
+		"title" : "Горе от ума",
+		"author_id" : 12,
+		"origin_country" : 11,
+		"publication_year" : 1825,
+		"file" : "33.fb2"
+	},
+	{
+		"id" : 34,
+		"title" : "Руслан и Людмила",
+		"author_id" : 6,
+		"origin_country" : 11,
+		"publication_year" : 1820,
+		"file" : "34.fb2"
+	},
+	{
+		"id" : 35,
+		"title" : "Капитанская дочка",
+		"author_id" : 6,
+		"origin_country" : 11,
+		"publication_year" : 1836,
+		"file" : "35.fb2"
+	},
+	{
+		"id" : 36,
+		"title" : "Дубровский",
+		"author_id" : 6,
+		"origin_country" : 11,
+		"publication_year" : 1841,
+		"file" : "36.fb2"
+	},
+	{
+		"id" : 37,
+		"title" : "Медный всадник",
+		"author_id" : 6,
+		"origin_country" : 11,
+		"publication_year" : 1833,
+		"file" : "37.fb2"
+	},
+	{
+		"id" : 38,
+		"title" : "Демон",
+		"author_id" : 10,
+		"origin_country" : 11,
+		"publication_year" : 1841,
+		"file" : "38.fb2"
+	},
+	{
+		"id" : 39,
+		"title" : "Мцыри",
+		"author_id" : 10,
+		"origin_country" : 11,
+		"publication_year" : 1840,
+		"file" : "39.fb2"
+	},
+	{
+		"id" : 40,
+		"title" : "Полтава",
+		"author_id" : 6,
+		"origin_country" : 11,
+		"publication_year" : 1829,
+		"file" : "40.fb2"
+	},
+	{
+		"id" : 41,
+		"title" : "Борис Годунов",
+		"author_id" : 6,
+		"origin_country" : 11,
+		"publication_year" : 1831,
+		"file" : "41.fb2"
+	},
+	{
+		"id" : 42,
+		"title" : "Маскарад",
+		"author_id" : 10,
+		"origin_country" : 11,
+		"publication_year" : 1835,
+		"file" : "42.fb2"
+	},
+	{
+		"id" : 43,
+		"title" : "Ревизор",
+		"author_id" : 9,
+		"origin_country" : 11,
+		"publication_year" : 1836,
+		"file" : "43.fb2"
+	},
+	{
+		"id" : 44,
+		"title" : "Недоросль",
+		"author_id" : 13,
+		"origin_country" : 11,
+		"publication_year" : 1782,
+		"file" : "44.fb2"
+	},
+	{
+		"id" : 45,
+		"title" : "Бахчисарайский фонтан",
+		"author_id" : 6,
+		"origin_country" : 11,
+		"publication_year" : 1824,
+		"file" : "45.fb2"
+	},
+	{
+		"id" : 46,
+		"title" : "Кавказский пленник",
+		"author_id" : 6,
+		"origin_country" : 11,
+		"publication_year" : 1822,
+		"file" : "46.fb2"
+	},
+	{
+		"id" : 47,
+		"title" : "Цыганы",
+		"author_id" : 6,
+		"origin_country" : 11,
+		"publication_year" : 1827,
+		"file" : "47.fb2"
+	},
+	{
+		"id" : 48,
+		"title" : "Граф Нулин",
+		"author_id" : 6,
+		"origin_country" : 11,
+		"publication_year" : 1826,
+		"file" : "48.fb2"
+	},
+	{
+		"id" : 49,
+		"title" : "Домик в Коломне",
+		"author_id" : 6,
+		"origin_country" : 11,
+		"publication_year" : 1830,
+		"file" : "49.fb2"
+	},
+	{
+		"id" : 50,
+		"title" : "Обыкновенная история",
+		"author_id" : 3,
+		"origin_country" : 11,
+		"publication_year" : 1847,
+		"file" : "50.fb2"
+	},
+	{
+		"id" : 51,
+		"title" : "Дым",
+		"author_id" : 2,
+		"origin_country" : 11,
+		"publication_year" : 1867,
+		"file" : "51.fb2"
+	},
+	{
+		"id" : 52,
+		"title" : "Новь",
+		"author_id" : 2,
+		"origin_country" : 11,
+		"publication_year" : 1877,
+		"file" : "52.fb2"
+	},
+	{
+		"id" : 53,
+		"title" : "Былое и думы",
+		"author_id" : 11,
+		"origin_country" : 11,
+		"publication_year" : 1852,
+		"file" : "53.fb2"
+	},
+	{
+		"id" : 54,
+		"title" : "Мастер и Маргарита",
+		"author_id" : 14,
+		"origin_country" : 11,
+		"publication_year" : 1967,
+		"file" : "54.fb2"
+	},
+	{
+		"id" : 55,
+		"title" : "Белая гвардия",
+		"author_id" : 14,
+		"origin_country" : 11,
+		"publication_year" : 1925,
+		"file" : "55.fb2"
+	},
+	{
+		"id" : 56,
+		"title" : "Собачье сердце",
+		"author_id" : 14,
+		"origin_country" : 11,
+		"publication_year" : 1925,
+		"file" : "56.fb2"
+	},
+	{
+		"id" : 57,
+		"title" : "Роковые яйца",
+		"author_id" : 14,
+		"origin_country" : 11,
+		"publication_year" : 1925,
+		"file" : "57.fb2"
+	},
+	{
+		"id" : 58,
+		"title" : "Театральный роман",
+		"author_id" : 14,
+		"origin_country" : 11,
+		"publication_year" : 1936,
+		"file" : "58.fb2"
+	},
+	{
+		"id" : 59,
+		"title" : "Двенадцать стульев",
+		"author_id" : 15,
+		"origin_country" : 11,
+		"publication_year" : 1928,
+		"file" : "59.fb2"
+	},
+	{
+		"id" : 60,
+		"title" : "Золотой телёнок",
+		"author_id" : 15,
+		"origin_country" : 11,
+		"publication_year" : 1931,
+		"file" : "60.fb2"
+	},
+	{
+		"id" : 61,
+		"title" : "Мы",
+		"author_id" : 16,
+		"origin_country" : 11,
+		"publication_year" : 1924,
+		"file" : "61.fb2"
+	},
+	{
+		"id" : 63,
+		"title" : "Котлован",
+		"author_id" : 18,
+		"origin_country" : 11,
+		"publication_year" : 1930,
+		"file" : "63.fb2"
+	},
+	{
+		"id" : 64,
+		"title" : "Чевенгур",
+		"author_id" : 18,
+		"origin_country" : 11,
+		"publication_year" : 1928,
+		"file" : "64.fb2"
+	},
+	{
+		"id" : 68,
+		"title" : "Петербург",
+		"author_id" : 22,
+		"origin_country" : 11,
+		"publication_year" : 1913,
+		"file" : "68.fb2"
+	},
+	{
+		"id" : 72,
+		"title" : "Конармия",
+		"author_id" : 24,
+		"origin_country" : 11,
+		"publication_year" : 1926,
+		"file" : "72.fb2"
+	},
+	{
+		"id" : 77,
+		"title" : "Тёмные аллеи",
+		"author_id" : 26,
+		"origin_country" : 11,
+		"publication_year" : 1943,
+		"file" : "77.fb2"
+	},
+	{
+		"id" : 78,
+		"title" : "Жизнь Арсеньева",
+		"author_id" : 26,
+		"origin_country" : 11,
+		"publication_year" : 1933,
+		"file" : "78.fb2"
+	},
+	{
+		"id" : 79,
+		"title" : "Митина любовь",
+		"author_id" : 26,
+		"origin_country" : 11,
+		"publication_year" : 1925,
+		"file" : "79.fb2"
+	},
+	{
+		"id" : 80,
+		"title" : "Гранатовый браслет",
+		"author_id" : 27,
+		"origin_country" : 11,
+		"publication_year" : 1911,
+		"file" : "80.fb2"
+	},
+	{
+		"id" : 81,
+		"title" : "Олеся",
+		"author_id" : 27,
+		"origin_country" : 11,
+		"publication_year" : 1898,
+		"file" : "81.fb2"
+	},
+	{
+		"id" : 82,
+		"title" : "Суламифь",
+		"author_id" : 27,
+		"origin_country" : 11,
+		"publication_year" : 1908,
+		"file" : "82.fb2"
+	},
+	{
+		"id" : 83,
+		"title" : "Яма",
+		"author_id" : 27,
+		"origin_country" : 11,
+		"publication_year" : 1915,
+		"file" : "83.fb2"
+	},
+	{
+		"id" : 84,
+		"title" : "Санин",
+		"author_id" : 28,
+		"origin_country" : 11,
+		"publication_year" : 1907,
+		"file" : "84.fb2"
+	},
+	{
+		"id" : 85,
+		"title" : "Мелкий бес",
+		"author_id" : 29,
+		"origin_country" : 11,
+		"publication_year" : 1905,
+		"file" : "85.fb2"
+	},
+	{
+		"id" : 87,
+		"title" : "Стихотворения в прозе",
+		"author_id" : 2,
+		"origin_country" : 11,
+		"publication_year" : 1882,
+		"file" : "87.fb2"
+	},
+	{
+		"id" : 88,
+		"title" : "Муму",
+		"author_id" : 2,
+		"origin_country" : 11,
+		"publication_year" : 1852,
+		"file" : "88.fb2"
+	},
+	{
+		"id" : 89,
+		"title" : "Ася",
+		"author_id" : 2,
+		"origin_country" : 11,
+		"publication_year" : 1858,
+		"file" : "89.fb2"
+	},
+	{
+		"id" : 90,
+		"title" : "Первая любовь",
+		"author_id" : 2,
+		"origin_country" : 11,
+		"publication_year" : 1860,
+		"file" : "90.fb2"
+	},
+	{
+		"id" : 91,
+		"title" : "Вешние воды",
+		"author_id" : 2,
+		"origin_country" : 11,
+		"publication_year" : 1872,
+		"file" : "91.fb2"
+	},
+	{
+		"id" : 92,
+		"title" : "Детство",
+		"author_id" : 1,
+		"origin_country" : 11,
+		"publication_year" : 1852,
+		"file" : "92.fb2"
+	},
+	{
+		"id" : 93,
+		"title" : "Отрочество",
+		"author_id" : 1,
+		"origin_country" : 11,
+		"publication_year" : 1854,
+		"file" : "93.fb2"
+	},
+	{
+		"id" : 94,
+		"title" : "Юность",
+		"author_id" : 1,
+		"origin_country" : 11,
+		"publication_year" : 1857,
+		"file" : "94.fb2"
+	},
+	{
+		"id" : 95,
+		"title" : "Севастопольские рассказы",
+		"author_id" : 1,
+		"origin_country" : 11,
+		"publication_year" : 1855,
+		"file" : "95.fb2"
+	},
+	{
+		"id" : 96,
+		"title" : "Холстомер",
+		"author_id" : 1,
+		"origin_country" : 11,
+		"publication_year" : 1886,
+		"file" : "96.fb2"
+	},
+	{
+		"id" : 98,
+		"title" : "Белолобый",
+		"author_id" : 30,
+		"origin_country" : 11,
+		"publication_year" : 1895,
+		"file" : "98.fb2"
+	},
+	{
+		"id" : 99,
+		"title" : "Степь",
+		"author_id" : 30,
+		"origin_country" : 11,
+		"publication_year" : 1888,
+		"file" : "99.fb2"
+	},
+	{
+		"id" : 100,
+		"title" : "Антоновские яблоки",
+		"author_id" : 26,
+		"origin_country" : 11,
+		"publication_year" : 1900,
+		"file" : "100.fb2"
+	},
+	{
+		"id" : 101,
+		"title" : "Суходол",
+		"author_id" : 26,
+		"origin_country" : 11,
+		"publication_year" : 1911,
+		"file" : "101.fb2"
+	},
+	{
+		"id" : 102,
+		"title" : "Нос",
+		"author_id" : 9,
+		"origin_country" : 11,
+		"publication_year" : 1836,
+		"file" : "102.fb2"
+	},
+	{
+		"id" : 103,
+		"title" : "Записки сумасшедшего",
+		"author_id" : 9,
+		"origin_country" : 11,
+		"publication_year" : 1835,
+		"file" : "103.fb2"
+	},
+	{
+		"id" : 104,
+		"title" : "Портрет",
+		"author_id" : 9,
+		"origin_country" : 11,
+		"publication_year" : 1835,
+		"file" : "104.fb2"
+	},
+	{
+		"id" : 105,
+		"title" : "Коляска",
+		"author_id" : 9,
+		"origin_country" : 11,
+		"publication_year" : 1836,
+		"file" : "105.fb2"
+	},
+	{
+		"id" : 106,
+		"title" : "Тарас Бульба",
+		"author_id" : 9,
+		"origin_country" : 11,
+		"publication_year" : 1835,
+		"file" : "106.fb2"
+	},
+	{
+		"id" : 107,
+		"title" : "Вечера на хуторе близ Диканьки",
+		"author_id" : 9,
+		"origin_country" : 11,
+		"publication_year" : 1831,
+		"file" : "107.fb2"
+	},
+	{
+		"id" : 109,
+		"title" : "Двойник",
+		"author_id" : 4,
+		"origin_country" : 11,
+		"publication_year" : 1846,
+		"file" : "109.fb2"
+	},
+	{
+		"id" : 110,
+		"title" : "Станционный смотритель",
+		"author_id" : 6,
+		"origin_country" : 11,
+		"publication_year" : 1830,
+		"file" : "110.fb2"
+	},
+	{
+		"id" : 111,
+		"title" : "Пиковая дама",
+		"author_id" : 6,
+		"origin_country" : 11,
+		"publication_year" : 1834,
+		"file" : "111.fb2"
+	},
+	{
+		"id" : 112,
+		"title" : "История одного города",
+		"author_id" : 8,
+		"origin_country" : 11,
+		"publication_year" : 1870,
+		"file" : "112.fb2"
+	},
+	{
+		"id" : 113,
+		"title" : "Старуха Изергиль",
+		"author_id" : 31,
+		"origin_country" : 11,
+		"publication_year" : 1895,
+		"file" : "113.fb2"
+	},
+	{
+		"id" : 114,
+		"title" : "На дне",
+		"author_id" : 31,
+		"origin_country" : 11,
+		"publication_year" : 1902,
+		"file" : "114.fb2"
+	},
+	{
+		"id" : 115,
+		"title" : "Мать",
+		"author_id" : 31,
+		"origin_country" : 11,
+		"publication_year" : 1906,
+		"file" : "115.fb2"
+	},
+	{
+		"id" : 116,
+		"title" : "Детство",
+		"author_id" : 31,
+		"origin_country" : 11,
+		"publication_year" : 1913,
+		"file" : "116.fb2"
+	},
+	{
+		"id" : 117,
+		"title" : "В людях",
+		"author_id" : 31,
+		"origin_country" : 11,
+		"publication_year" : 1916,
+		"file" : "117.fb2"
+	},
+	{
+		"id" : 118,
+		"title" : "Мои университеты",
+		"author_id" : 31,
+		"origin_country" : 11,
+		"publication_year" : 1923,
+		"file" : "118.fb2"
+	},
+	{
+		"id" : 126,
+		"title" : "Поединок",
+		"author_id" : 27,
+		"origin_country" : 11,
+		"publication_year" : 1905,
+		"file" : "126.fb2"
+	},
+	{
+		"id" : 127,
+		"title" : "Господин из Сан-Франциско",
+		"author_id" : 26,
+		"origin_country" : 11,
+		"publication_year" : 1915,
+		"file" : "127.fb2"
+	},
+	{
+		"id" : 128,
+		"title" : "Деревня",
+		"author_id" : 26,
+		"origin_country" : 11,
+		"publication_year" : 1910,
+		"file" : "128.fb2"
+	},
+	{
+		"id" : 130,
+		"title" : "Капитал",
+		"author_id" : 33,
+		"origin_country" : 4,
+		"publication_year" : 1867,
+		"file" : "130.fb2"
+	},
+	{
+		"id" : 131,
+		"title" : "Государство и революция",
+		"author_id" : 34,
+		"origin_country" : 11,
+		"publication_year" : 1917,
+		"file" : "131.fb2"
+	},
+	{
+		"id" : 133,
+		"title" : "Железная пята",
+		"author_id" : 35,
+		"origin_country" : 2,
+		"publication_year" : 1908,
+		"file" : "133.fb2"
+	},
+	{
+		"id" : 134,
+		"title" : "1984",
+		"author_id" : 36,
+		"origin_country" : 1,
+		"publication_year" : 1949,
+		"file" : "134.fb2"
+	},
+	{
+		"id" : 135,
+		"title" : "Скотный двор",
+		"author_id" : 36,
+		"origin_country" : 1,
+		"publication_year" : 1945,
+		"file" : "135.fb2"
+	},
+	{
+		"id" : 137,
+		"title" : "Как закалялась сталь",
+		"author_id" : 38,
+		"origin_country" : 11,
+		"publication_year" : 1934,
+		"file" : "137.fb2"
+	},
+	{
+		"id" : 138,
+		"title" : "Юшка",
+		"author_id" : 18,
+		"origin_country" : null,
+		"publication_year" : 1971,
+		"file" : "138.fb2"
+	},
+	{
+		"id" : 140,
+		"title" : "Моцарт и Сальери",
+		"author_id" : 6,
+		"origin_country" : 11,
+		"publication_year" : 1830,
+		"file" : "140.fb2"
+	},
+	{
+		"id" : 141,
+		"title" : "Сапожки",
+		"author_id" : 40,
+		"origin_country" : 11,
+		"publication_year" : 1851,
+		"file" : "141.fb2"
+	},
+	{
+		"id" : 143,
+		"title" : "Чёрный человек",
+		"author_id" : 42,
+		"origin_country" : 11,
+		"publication_year" : 1923,
+		"file" : "143.fb2"
+	},
+	{
+		"id" : 144,
+		"title" : "Левша",
+		"author_id" : 43,
+		"origin_country" : 11,
+		"publication_year" : 1881,
+		"file" : "144.fb2"
+	},
+	{
+		"id" : 145,
+		"title" : "Скучная история",
+		"author_id" : 30,
+		"origin_country" : 11,
+		"publication_year" : 1889,
+		"file" : "145.fb2"
+	},
+	{
+		"id" : 146,
+		"title" : "Соборяне",
+		"author_id" : 43,
+		"origin_country" : 11,
+		"publication_year" : 1872,
+		"file" : "146.fb2"
+	},
+	{
+		"id" : 147,
+		"title" : "Палата №6",
+		"author_id" : 30,
+		"origin_country" : 11,
+		"publication_year" : 1892,
+		"file" : "147.fb2"
+	},
+	{
+		"id" : 148,
+		"title" : "Серебряный голубь",
+		"author_id" : 22,
+		"origin_country" : 11,
+		"publication_year" : 1909,
+		"file" : "148.fb2"
+	},
+	{
+		"id" : 149,
+		"title" : "Письма русского путешественника",
+		"author_id" : 44,
+		"origin_country" : 11,
+		"publication_year" : 1791,
+		"file" : "149.fb2"
+	},
+	{
+		"id" : 150,
+		"title" : "Повести Белкина",
+		"author_id" : 6,
+		"origin_country" : 11,
+		"publication_year" : 1830,
+		"file" : "150.fb2"
+	},
+	{
+		"id" : 153,
+		"title" : "Сон смешного человека",
+		"author_id" : 4,
+		"origin_country" : 11,
+		"publication_year" : 1877,
+		"file" : "153.fb2"
+	},
+	{
+		"id" : 155,
+		"title" : "Гамлет",
+		"author_id" : 47,
+		"origin_country" : 1,
+		"publication_year" : 1601,
+		"file" : "155.fb2"
+	},
+	{
+		"id" : 156,
+		"title" : "Ромео и Джульетта",
+		"author_id" : 47,
+		"origin_country" : 1,
+		"publication_year" : 1597,
+		"file" : "156.fb2"
+	},
+	{
+		"id" : 157,
+		"title" : "Макбет",
+		"author_id" : 47,
+		"origin_country" : 1,
+		"publication_year" : 1606,
+		"file" : "157.fb2"
+	},
+	{
+		"id" : 158,
+		"title" : "Король Лир",
+		"author_id" : 47,
+		"origin_country" : 1,
+		"publication_year" : 1606,
+		"file" : "158.fb2"
+	},
+	{
+		"id" : 159,
+		"title" : "Сон в летнюю ночь",
+		"author_id" : 47,
+		"origin_country" : 1,
+		"publication_year" : 1595,
+		"file" : "159.fb2"
+	},
+	{
+		"id" : 160,
+		"title" : "Оливер Твист",
+		"author_id" : 48,
+		"origin_country" : 1,
+		"publication_year" : 1838,
+		"file" : "160.fb2"
+	},
+	{
+		"id" : 161,
+		"title" : "Большие надежды",
+		"author_id" : 48,
+		"origin_country" : 1,
+		"publication_year" : 1861,
+		"file" : "161.fb2"
+	},
+	{
+		"id" : 162,
+		"title" : "Рождественская песнь",
+		"author_id" : 48,
+		"origin_country" : 1,
+		"publication_year" : 1843,
+		"file" : "162.fb2"
+	},
+	{
+		"id" : 164,
+		"title" : "Гордость и предубеждение",
+		"author_id" : 49,
+		"origin_country" : 1,
+		"publication_year" : 1813,
+		"file" : "164.fb2"
+	},
+	{
+		"id" : 165,
+		"title" : "Чувство и чувствительность",
+		"author_id" : 49,
+		"origin_country" : 1,
+		"publication_year" : 1811,
+		"file" : "165.fb2"
+	},
+	{
+		"id" : 166,
+		"title" : "Эмма",
+		"author_id" : 49,
+		"origin_country" : 1,
+		"publication_year" : 1815,
+		"file" : "166.fb2"
+	},
+	{
+		"id" : 167,
+		"title" : "Записки о Шерлоке Холмсе",
+		"author_id" : 50,
+		"origin_country" : 1,
+		"publication_year" : 1894,
+		"file" : "167.fb2"
+	},
+	{
+		"id" : 168,
+		"title" : "Собака Баскервилей",
+		"author_id" : 50,
+		"origin_country" : 1,
+		"publication_year" : 1902,
+		"file" : "168.fb2"
+	},
+	{
+		"id" : 171,
+		"title" : "Портрет Дориана Грея",
+		"author_id" : 52,
+		"origin_country" : 1,
+		"publication_year" : 1890,
+		"file" : "171.fb2"
+	},
+	{
+		"id" : 172,
+		"title" : "Алиса в Стране чудес",
+		"author_id" : 53,
+		"origin_country" : 1,
+		"publication_year" : 1865,
+		"file" : "172.fb2"
+	},
+	{
+		"id" : 175,
+		"title" : "Война миров",
+		"author_id" : 55,
+		"origin_country" : 1,
+		"publication_year" : 1898,
+		"file" : "175.fb2"
+	},
+	{
+		"id" : 176,
+		"title" : "Машина времени",
+		"author_id" : 55,
+		"origin_country" : 1,
+		"publication_year" : 1895,
+		"file" : "176.fb2"
+	},
+	{
+		"id" : 177,
+		"title" : "Книга джунглей",
+		"author_id" : 56,
+		"origin_country" : 1,
+		"publication_year" : 1894,
+		"file" : "177.fb2"
+	},
+	{
+		"id" : 178,
+		"title" : "Улисс",
+		"author_id" : 97,
+		"origin_country" : 9,
+		"publication_year" : 1922,
+		"file" : "178.fb2"
+	},
+	{
+		"id" : 179,
+		"title" : "Дракула",
+		"author_id" : 99,
+		"origin_country" : 1,
+		"publication_year" : 1897,
+		"file" : "179.fb2"
+	},
+	{
+		"id" : 180,
+		"title" : "Путешествия Гулливера",
+		"author_id" : 100,
+		"origin_country" : 1,
+		"publication_year" : 1726,
+		"file" : "180.fb2"
+	},
+	{
+		"id" : 181,
+		"title" : "Миссис Дэллоуэй",
+		"author_id" : 101,
+		"origin_country" : 1,
+		"publication_year" : 1925,
+		"file" : "181.fb2"
+	},
+	{
+		"id" : 182,
+		"title" : "Приключения Тома Сойера",
+		"author_id" : 57,
+		"origin_country" : 2,
+		"publication_year" : 1876,
+		"file" : "182.fb2"
+	},
+	{
+		"id" : 183,
+		"title" : "Приключения Гекльберри Финна",
+		"author_id" : 57,
+		"origin_country" : 2,
+		"publication_year" : 1884,
+		"file" : "183.fb2"
+	},
+	{
+		"id" : 184,
+		"title" : "Принц и нищий",
+		"author_id" : 57,
+		"origin_country" : 2,
+		"publication_year" : 1881,
+		"file" : "184.fb2"
+	},
+	{
+		"id" : 188,
+		"title" : "Великий Гэтсби",
+		"author_id" : 59,
+		"origin_country" : 2,
+		"publication_year" : 1925,
+		"file" : "188.fb2"
+	},
+	{
+		"id" : 189,
+		"title" : "Ночь нежна",
+		"author_id" : 59,
+		"origin_country" : 2,
+		"publication_year" : 1934,
+		"file" : "189.fb2"
+	},
+	{
+		"id" : 195,
+		"title" : "Зов предков",
+		"author_id" : 35,
+		"origin_country" : 2,
+		"publication_year" : 1903,
+		"file" : "195.fb2"
+	},
+	{
+		"id" : 196,
+		"title" : "Белый клык",
+		"author_id" : 35,
+		"origin_country" : 2,
+		"publication_year" : 1906,
+		"file" : "196.fb2"
+	},
+	{
+		"id" : 197,
+		"title" : "Мартин Иден",
+		"author_id" : 35,
+		"origin_country" : 2,
+		"publication_year" : 1909,
+		"file" : "197.fb2"
+	},
+	{
+		"id" : 198,
+		"title" : "Зов Ктулху",
+		"author_id" : 64,
+		"origin_country" : 2,
+		"publication_year" : 1928,
+		"file" : "198.fb2"
+	},
+	{
+		"id" : 201,
+		"title" : "Отверженные",
+		"author_id" : 67,
+		"origin_country" : 3,
+		"publication_year" : 1862,
+		"file" : "201.fb2"
+	},
+	{
+		"id" : 202,
+		"title" : "Собор Парижской Богоматери",
+		"author_id" : 67,
+		"origin_country" : 3,
+		"publication_year" : 1831,
+		"file" : "202.fb2"
+	},
+	{
+		"id" : 203,
+		"title" : "Три мушкетера",
+		"author_id" : 68,
+		"origin_country" : 3,
+		"publication_year" : 1844,
+		"file" : "203.fb2"
+	},
+	{
+		"id" : 204,
+		"title" : "Граф Монте-Кристо",
+		"author_id" : 68,
+		"origin_country" : 3,
+		"publication_year" : 1846,
+		"file" : "204.fb2"
+	},
+	{
+		"id" : 205,
+		"title" : "Двадцать тысяч льё под водой",
+		"author_id" : 69,
+		"origin_country" : 3,
+		"publication_year" : 1870,
+		"file" : "205.fb2"
+	},
+	{
+		"id" : 206,
+		"title" : "Таинственный остров",
+		"author_id" : 69,
+		"origin_country" : 3,
+		"publication_year" : 1874,
+		"file" : "206.fb2"
+	},
+	{
+		"id" : 207,
+		"title" : "Вокруг света за восемьдесят дней",
+		"author_id" : 69,
+		"origin_country" : 3,
+		"publication_year" : 1873,
+		"file" : "207.fb2"
+	},
+	{
+		"id" : 208,
+		"title" : "В поисках утраченного времени",
+		"author_id" : 70,
+		"origin_country" : 3,
+		"publication_year" : 1913,
+		"file" : "208.fb2"
+	},
+	{
+		"id" : 210,
+		"title" : "Отец Горио",
+		"author_id" : 72,
+		"origin_country" : 3,
+		"publication_year" : 1835,
+		"file" : "210.fb2"
+	},
+	{
+		"id" : 211,
+		"title" : "Шагреневая кожа",
+		"author_id" : 72,
+		"origin_country" : 3,
+		"publication_year" : 1831,
+		"file" : "211.fb2"
+	},
+	{
+		"id" : 213,
+		"title" : "Маленький принц",
+		"author_id" : 74,
+		"origin_country" : 3,
+		"publication_year" : 1943,
+		"file" : "213.fb2"
+	},
+	{
+		"id" : 215,
+		"title" : "Жерминаль",
+		"author_id" : 76,
+		"origin_country" : 3,
+		"publication_year" : 1885,
+		"file" : "215.fb2"
+	},
+	{
+		"id" : 216,
+		"title" : "Фауст",
+		"author_id" : 77,
+		"origin_country" : 4,
+		"publication_year" : 1832,
+		"file" : "216.fb2"
+	},
+	{
+		"id" : 217,
+		"title" : "Страдания юного Вертера",
+		"author_id" : 77,
+		"origin_country" : 4,
+		"publication_year" : 1774,
+		"file" : "217.fb2"
+	},
+	{
+		"id" : 218,
+		"title" : "Превращение",
+		"author_id" : 78,
+		"origin_country" : 10,
+		"publication_year" : 1915,
+		"file" : "218.fb2"
+	},
+	{
+		"id" : 219,
+		"title" : "Процесс",
+		"author_id" : 78,
+		"origin_country" : 10,
+		"publication_year" : 1925,
+		"file" : "219.fb2"
+	},
+	{
+		"id" : 220,
+		"title" : "Будденброки",
+		"author_id" : 79,
+		"origin_country" : 4,
+		"publication_year" : 1901,
+		"file" : "220.fb2"
+	},
+	{
+		"id" : 225,
+		"title" : "Война с саламандрами",
+		"author_id" : 102,
+		"origin_country" : 10,
+		"publication_year" : 1936,
+		"file" : "225.fb2"
+	},
+	{
+		"id" : 227,
+		"title" : "Похождения бравого солдата Швейка",
+		"author_id" : 105,
+		"origin_country" : 10,
+		"publication_year" : 1923,
+		"file" : "227.fb2"
+	},
+	{
+		"id" : 228,
+		"title" : "Дон Кихот",
+		"author_id" : 82,
+		"origin_country" : 5,
+		"publication_year" : 1605,
+		"file" : "228.fb2"
+	},
+	{
+		"id" : 235,
+		"title" : "Божественная комедия",
+		"author_id" : 87,
+		"origin_country" : 6,
+		"publication_year" : 1320,
+		"file" : "235.fb2"
+	},
+	{
+		"id" : 241,
+		"title" : "Расёмон",
+		"author_id" : 93,
+		"origin_country" : 8,
+		"publication_year" : 1915,
+		"file" : "241.fb2"
+	},
+	{
+		"id" : 244,
+		"title" : "Ваш покорный слуга кот",
+		"author_id" : 96,
+		"origin_country" : 8,
+		"publication_year" : 1905,
+		"file" : "244.fb2"
+	},
+	{
+		"id" : 245,
+		"title" : "Сон в красном тереме",
+		"author_id" : 107,
+		"origin_country" : 12,
+		"publication_year" : 1791,
+		"file" : "245.fb2"
+	},
+	{
+		"id" : 246,
+		"title" : "Троецарствие",
+		"author_id" : 108,
+		"origin_country" : 12,
+		"publication_year" : 1522,
+		"file" : "246.fb2"
+	},
+	{
+		"id" : 247,
+		"title" : "Путешествие на Запад",
+		"author_id" : 109,
+		"origin_country" : 12,
+		"publication_year" : 1592,
+		"file" : "247.fb2"
+	},
+	{
+		"id" : 248,
+		"title" : "Речные заводи",
+		"author_id" : 110,
+		"origin_country" : 12,
+		"publication_year" : 1400,
+		"file" : "248.fb2"
+	},
+	{
+		"id" : 249,
+		"title" : "Искусство войны",
+		"author_id" : 111,
+		"origin_country" : 12,
+		"publication_year" : -500,
+		"file" : "249.fb2"
+	},
+	{
+		"id" : 250,
+		"title" : "Дао дэ цзин",
+		"author_id" : 112,
+		"origin_country" : 12,
+		"publication_year" : -400,
+		"file" : "250.fb2"
+	},
+	{
+		"id" : 251,
+		"title" : "Беседы и суждения",
+		"author_id" : 113,
+		"origin_country" : 12,
+		"publication_year" : -475,
+		"file" : "251.fb2"
+	}
+]}

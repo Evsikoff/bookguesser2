@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Book Guesser 2</title>
+    <link rel="stylesheet" href="css/game.css">
+    <script src="/sdk.js"></script>
+</head>
+<body>
+
+<!-- ===== APP LOADING SCREEN ===== -->
+<div id="screen-app-loading" class="screen active">
+    <div class="loading-center">
+        <svg class="app-logo-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <rect x="8" y="8" width="22" height="48" rx="3" stroke="currentColor" stroke-width="2.5"/>
+            <rect x="34" y="8" width="22" height="48" rx="3" stroke="currentColor" stroke-width="2.5"/>
+            <line x1="8" y1="22" x2="30" y2="22" stroke="currentColor" stroke-width="2"/>
+            <line x1="8" y1="30" x2="30" y2="30" stroke="currentColor" stroke-width="2"/>
+            <line x1="8" y1="38" x2="30" y2="38" stroke="currentColor" stroke-width="2"/>
+            <line x1="34" y1="22" x2="56" y2="22" stroke="currentColor" stroke-width="2"/>
+            <line x1="34" y1="30" x2="56" y2="30" stroke="currentColor" stroke-width="2"/>
+            <line x1="34" y1="38" x2="56" y2="38" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <h1 class="game-title-loading">Book Guesser 2</h1>
+        <div class="loading-dots">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</div>
+
+<!-- ===== MAIN SCREEN ===== -->
+<div id="screen-main" class="screen library-bg">
+    <div class="main-container">
+        <header class="main-header">
+            <div class="decorative-line"></div>
+            <h1 class="game-title">Book Guesser 2</h1>
+            <div class="game-subtitle">Угадайте книгу по фрагменту</div>
+            <div class="decorative-line"></div>
+        </header>
+
+        <div class="stats-card">
+            <div class="stats-card-title">Ваша библиотека</div>
+            <div class="stat-row">
+                <span class="stat-label">Уровень книголюба</span>
+                <span id="stat-score" class="stat-value">0</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Книжные путешествия</span>
+                <span id="stat-journeys" class="stat-value">0</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Максимальная серия</span>
+                <span id="stat-streak-max" class="stat-value">0</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Энергия</span>
+                <div class="energy-row-controls">
+                    <span id="stat-energy" class="stat-value energy-value">30</span>
+                    <button id="btn-energy-plus-main" class="energy-plus-btn" aria-label="Получить энергию">+</button>
+                    <span id="promo-badge-main" class="promo-badge hidden">-50%</span>
+                </div>
+            </div>
+        </div>
+
+        <button id="btn-play" class="btn-primary btn-play-main">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M8 5l13 7-13 7V5z" fill="currentColor"/>
+            </svg>
+            Играть
+        </button>
+    </div>
+
+    <div class="shelf-decoration" aria-hidden="true">
+        <div class="shelf-books">
+            <div class="shelf-book book-1"></div>
+            <div class="shelf-book book-2"></div>
+            <div class="shelf-book book-3"></div>
+            <div class="shelf-book book-4"></div>
+            <div class="shelf-book book-5"></div>
+            <div class="shelf-book book-6"></div>
+            <div class="shelf-book book-7"></div>
+        </div>
+        <div class="shelf-plank"></div>
+    </div>
+</div>
+
+<!-- ===== ROUND LOADING SCREEN ===== -->
+<div id="screen-round-loading" class="screen">
+    <div class="loading-center">
+        <div class="book-opening-anim" aria-hidden="true">
+            <svg viewBox="0 0 80 60" fill="none">
+                <g class="book-left-page">
+                    <rect x="4" y="4" width="34" height="52" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <line x1="10" y1="14" x2="32" y2="14" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="10" y1="20" x2="32" y2="20" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="10" y1="26" x2="28" y2="26" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="10" y1="32" x2="32" y2="32" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="10" y1="38" x2="26" y2="38" stroke="currentColor" stroke-width="1.5"/>
+                </g>
+                <g class="book-right-page">
+                    <rect x="42" y="4" width="34" height="52" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <line x1="48" y1="14" x2="70" y2="14" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="48" y1="20" x2="70" y2="20" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="48" y1="26" x2="68" y2="26" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="48" y1="32" x2="70" y2="32" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="48" y1="38" x2="64" y2="38" stroke="currentColor" stroke-width="1.5"/>
+                </g>
+                <line x1="40" y1="4" x2="40" y2="56" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </div>
+        <p class="loading-text">Открываем книгу...</p>
+        <div class="loading-dots">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</div>
+
+<!-- ===== ROUND SCREEN ===== -->
+<div id="screen-round" class="screen">
+    <div class="round-layout">
+        <div class="round-header">
+            <div id="timer-display" class="timer" aria-live="polite" aria-label="Оставшееся время">2:00</div>
+            <div class="round-hint">Угадайте книгу</div>
+        </div>
+
+        <div class="reader-container">
+            <iframe
+                id="reader-iframe"
+                class="reader-frame"
+                title="Читалка книги"
+                sandbox="allow-scripts allow-same-origin"
+            ></iframe>
+        </div>
+
+        <div class="search-container">
+            <div class="search-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+                    <path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <input
+                    id="search-input"
+                    type="text"
+                    placeholder="Название книги или автор..."
+                    class="search-input"
+                    autocomplete="off"
+                    spellcheck="false"
+                    aria-label="Поиск книги"
+                    aria-autocomplete="list"
+                    aria-controls="search-dropdown"
+                >
+                <button id="btn-search-clear" class="search-clear-btn hidden" aria-label="Очистить поиск">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="search-dropdown" class="search-dropdown" role="listbox" aria-label="Результаты поиска"></div>
+            <div id="selected-book-label" class="selected-book-label hidden"></div>
+            <button id="btn-confirm" class="btn-primary btn-confirm hidden">
+                Подтвердить
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ===== RESULTS SCREEN ===== -->
+<div id="screen-results" class="screen">
+    <div class="results-layout">
+
+        <div id="results-banner" class="results-banner">
+            <div id="results-icon" class="results-icon" aria-hidden="true"></div>
+            <h2 id="results-title" class="results-title"></h2>
+            <div id="results-score-block" class="results-score-block">
+                <div class="score-line">
+                    <span class="score-label">Базовые очки:</span>
+                    <span id="results-base-score" class="score-amount">+0</span>
+                </div>
+                <div id="results-streak-block" class="results-streak-block hidden">
+                    <div class="score-line">
+                        <span class="score-label">Серия:</span>
+                        <span id="results-streak-len" class="score-amount"></span>
+                    </div>
+                    <div class="score-line multiplier-line">
+                        <span class="score-label">Коэффициент:</span>
+                        <span id="results-multiplier" class="score-amount multiplier-value"></span>
+                    </div>
+                    <div class="score-line total-line">
+                        <span class="score-label">Итого:</span>
+                        <span id="results-final-score" class="score-amount final-score-value"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="results-streak-broken" class="results-streak-broken hidden">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+                Серия прервана!
+            </div>
+        </div>
+
+        <div class="stats-card compact">
+            <div class="stat-row">
+                <span class="stat-label">Уровень книголюба</span>
+                <span id="res-stat-score" class="stat-value">0</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Книжных путешествий</span>
+                <span id="res-stat-journeys" class="stat-value">0</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Текущая серия</span>
+                <span id="res-stat-streak" class="stat-value">0</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Энергия</span>
+                <div class="energy-row-controls">
+                    <span id="res-stat-energy" class="stat-value energy-value">0</span>
+                    <button class="energy-plus-btn open-energy-modal" aria-label="Получить энергию">+</button>
+                    <span id="res-promo-badge" class="promo-badge hidden">-50%</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="results-actions" class="results-actions"></div>
+    </div>
+</div>
+
+<!-- ===== CORRECT ANSWER SCREEN ===== -->
+<div id="screen-answer" class="screen">
+    <div class="answer-layout">
+        <h2 class="answer-header-title">Правильный ответ</h2>
+
+        <div id="answer-cover-wrap" class="answer-cover-wrap hidden">
+            <img id="answer-cover" class="answer-cover" alt="Обложка книги">
+        </div>
+
+        <div class="answer-book-card">
+            <div id="answer-book-title" class="answer-book-title"></div>
+            <div id="answer-book-author" class="answer-book-author"></div>
+            <div id="answer-book-year" class="answer-book-year"></div>
+        </div>
+
+        <div class="stats-card compact">
+            <div class="stat-row">
+                <span class="stat-label">Уровень книголюба</span>
+                <span id="ans-stat-score" class="stat-value">0</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Энергия</span>
+                <div class="energy-row-controls">
+                    <span id="ans-stat-energy" class="stat-value energy-value">0</span>
+                    <button class="energy-plus-btn open-energy-modal" aria-label="Получить энергию">+</button>
+                    <span id="ans-promo-badge" class="promo-badge hidden">-50%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="answer-actions">
+            <button id="btn-answer-play" class="btn-primary">Продолжить играть</button>
+            <button id="btn-answer-menu" class="btn-secondary">В главное меню</button>
+        </div>
+    </div>
+</div>
+
+<!-- ===== ENERGY MODAL ===== -->
+<div id="modal-energy" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-label="Энергия">
+    <div class="modal-box">
+        <button id="btn-energy-modal-close" class="modal-close" aria-label="Закрыть">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+        <h3 class="modal-title">Энергия</h3>
+
+        <div class="modal-energy-display">
+            <svg class="energy-bolt-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor"/>
+            </svg>
+            <span id="modal-energy-value" class="energy-big-number">30</span>
+        </div>
+
+        <div id="modal-restore-block" class="modal-restore-block hidden">
+            <p class="restore-label">До бесплатного восстановления:</p>
+            <div id="modal-restore-countdown" class="countdown-display">10:00:00</div>
+        </div>
+
+        <div class="modal-actions">
+            <button id="btn-buy-energy" class="btn-energy-action btn-buy">
+                <div class="energy-action-text">Купить 100 единиц энергии</div>
+                <div id="btn-buy-price" class="energy-action-price">...</div>
+            </button>
+
+            <button id="btn-watch-video" class="btn-energy-action btn-video">
+                <svg class="btn-icon-sm" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <polygon points="5,3 19,12 5,21" fill="currentColor"/>
+                </svg>
+                Получить 5 единиц энергии за видео
+            </button>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
