@@ -425,6 +425,7 @@ export class Paginator extends HTMLElement {
     static observedAttributes = [
         'flow', 'gap', 'margin',
         'max-inline-size', 'max-block-size', 'max-column-count',
+        'no-scrollbar',
     ]
     #root = this.attachShadow({ mode: 'closed' })
     #observer = new ResizeObserver(() => this.render())
@@ -512,6 +513,15 @@ export class Paginator extends HTMLElement {
             grid-column: 1 / -1;
             grid-row: 1 / -1;
             overflow: auto;
+        }
+        :host([no-scrollbar]) #container {
+            scrollbar-width: none;
+        }
+        :host([no-scrollbar]) #container::-webkit-scrollbar {
+            display: none;
+        }
+        :host([flow="scrolled"][no-scrollbar]) #container {
+            overflow: hidden;
         }
         #header {
             grid-column: 3 / 4;

@@ -159,6 +159,9 @@ async function init() {
         })
     } catch {}
 
+    // Detect device type (mobile/desktop)
+    detectDevice()
+
     // Setup all button handlers
     setupEventListeners()
 
@@ -546,7 +549,7 @@ async function startRound(retryState) {
         fraction = retryState.startFraction
     } else {
         book = selectNextBook()
-        fraction = null   // will be set after reader reports sections
+        fraction = 1/3 + Math.random() * 1/3
     }
 
     currentRound = {
@@ -597,27 +600,15 @@ function waitForReaderMessage(type, timeoutMs = 20000) {
     })
 }
 
-async function loadReaderAndNavigate(book, knownFraction) {
+async function loadReaderAndNavigate(book, fraction) {
     const iframe = document.getElementById('reader-iframe')
     // Pass just the filename — reader builds the absolute path to avoid encoding issues
-    const readerUrl = `reader/reader.html?file=${encodeURIComponent(book.file)}&game=1`
+    const readerUrl = `reader/reader.html?file=${encodeURIComponent(book.file)}&game=1&fraction=${fraction}`
 
     iframe.src = readerUrl
 
     try {
-        const msg = await waitForReaderMessage('bookLoaded')
-        const totalLocations = msg.totalLocations || 0
-
-        let fraction = knownFraction
-        if (fraction === null || fraction === undefined) {
-            fraction = computeStartFraction(totalLocations)
-        }
-        currentRound.startFraction = fraction
-        playerData.currentRound.startFraction = fraction
-
-        // Tell reader to navigate
-        iframe.contentWindow.postMessage({ type: 'navigate', fraction }, '*')
-
+        await waitForReaderMessage('bookLoaded')
         // Short pause for rendering
         await sleep(800)
     } catch (e) {
@@ -708,6 +699,9 @@ function calculateRoundResult(targetBook, selectedBook) {
     if (selectedBook.author_id === targetBook.author_id) {
         return { type: 'author', baseScore: 50 }
     }
+    if (selectedBook.origin_country && selectedBook.origin_country === targetBook.origin_country) {
+        return { type: 'country', baseScore: 25 }
+    }
     if (Math.abs((selectedBook.publication_year || 0) - (targetBook.publication_year || 0)) < 31) {
         return { type: 'era', baseScore: 25 }
     }
@@ -716,7 +710,7 @@ function calculateRoundResult(targetBook, selectedBook) {
 
 function computeMultiplier(streakLen) {
     if (streakLen <= 1) return 1
-    return Math.min(1 + streakLen / 10, 1 + STREAK_CAP / 10)
+    return 1 + streakLen / 10
 }
 
 function markBookPlayed(bookId) {
@@ -869,19 +863,21 @@ function renderResultsBanner(result) {
     // Icon
     const iconEl = document.getElementById('results-icon')
     const icons = {
-        book:   '<svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>',
-        author: '<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
-        era:    '<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
-        fail:   '<svg viewBox="0 0 24 24" fill="none"><path d="M12 8v5M12 16h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg>',
+        book:    '<svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>',
+        author:  '<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+        country: '<svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+        era:     '<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+        fail:    '<svg viewBox="0 0 24 24" fill="none"><path d="M12 8v5M12 16h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg>',
     }
     iconEl.innerHTML = icons[result.type] || icons.fail
 
     // Title
     const titles = {
-        book:   'Поздравляем! Вы угадали книгу!',
-        author: 'Отлично! Вы угадали автора!',
-        era:    'Неплохо! Вы угадали эпоху книги!',
-        fail:   'Увы, не угадали...',
+        book:    'Поздравляем! Вы угадали книгу!',
+        author:  'Отлично! Вы угадали автора!',
+        country: 'Хорошо! Вы угадали страну книги!',
+        era:     'Неплохо! Вы угадали эпоху книги!',
+        fail:    'Увы, не угадали...',
     }
     setText('results-title', titles[result.type])
 
@@ -900,6 +896,7 @@ function renderResultsBanner(result) {
             streakBlock.classList.remove('hidden')
             setText('results-streak-len', result.streak)
             setText('results-multiplier', '×' + result.multiplier.toFixed(1))
+            setText('results-bonus-score', '+' + (result.roundScore - result.baseScore))
             setText('results-final-score', '+' + result.roundScore)
         } else {
             streakBlock.classList.add('hidden')
@@ -934,9 +931,9 @@ function renderResultsActions(result) {
             if (playerStats.energy >= ENERGY_COST) startRound(null)
             else openEnergyModal()
         }, !canPlay)
-        addButton(container, 'btn-secondary', 'В главное меню', showMainScreen)
+        addButton(container, 'btn-secondary', 'Вернуться в главное меню', showMainScreen)
 
-    } else if (result.type === 'author' || result.type === 'era') {
+    } else if (result.type === 'author' || result.type === 'era' || result.type === 'country') {
         // Partial success
         addButton(container, 'btn-primary', 'Попробовать еще раз (видео)', () => {
             const retryState = { ...currentRound }
@@ -945,7 +942,7 @@ function renderResultsActions(result) {
             })
         })
         addButton(container, 'btn-secondary', 'Показать правильный ответ', () => showAnswerScreen(result.book))
-        addButton(container, 'btn-secondary', 'В главное меню', showMainScreen)
+        addButton(container, 'btn-secondary', 'Вернуться в главное меню', showMainScreen)
 
     } else {
         // Fail
@@ -956,7 +953,7 @@ function renderResultsActions(result) {
             })
         })
         addButton(container, 'btn-secondary', 'Показать правильный ответ', () => showAnswerScreen(result.book))
-        addButton(container, 'btn-secondary', 'В главное меню', showMainScreen)
+        addButton(container, 'btn-secondary', 'Вернуться в главное меню', showMainScreen)
     }
 }
 
@@ -1147,6 +1144,22 @@ function selectBookFromSearch(book) {
 }
 
 // ===== UTILITIES =====
+function detectDevice() {
+    let isMobile = false
+    try {
+        if (ysdk && ysdk.deviceInfo) {
+            isMobile = ysdk.deviceInfo.isMobile() || ysdk.deviceInfo.type === 'mobile' || ysdk.deviceInfo.type === 'tablet'
+        } else {
+            isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent)
+        }
+    } catch {
+        isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent)
+    }
+    if (isMobile) {
+        document.body.classList.add('is-mobile')
+    }
+}
+
 function setText(id, text) {
     const el = document.getElementById(id)
     if (el) el.textContent = text

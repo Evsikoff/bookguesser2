@@ -536,6 +536,16 @@ img {
     overscroll-behavior: contain;
 }
 
+body.is-mobile .search-container {
+    order: -1;
+    border-top: none;
+    border-bottom: 1px solid var(--c-border);
+}
+
+body.is-mobile .round-header {
+    order: -2;
+}
+
 .search-wrapper {
     position: relative;
     display: flex;
@@ -700,6 +710,11 @@ img {
     border-color: rgba(224,144,48,0.4);
 }
 
+.results-banner.result-country {
+    background: var(--c-warn-bg);
+    border-color: rgba(224,144,48,0.4);
+}
+
 .results-banner.result-era {
     background: var(--c-partial-bg);
     border-color: rgba(80,144,192,0.4);
@@ -727,6 +742,7 @@ img {
 
 .result-book .results-icon { background: rgba(106,176,74,0.2); color: var(--c-success); }
 .result-author .results-icon { background: rgba(224,144,48,0.2); color: var(--c-warn); }
+.result-country .results-icon { background: rgba(224,144,48,0.2); color: var(--c-warn); }
 .result-era .results-icon { background: rgba(80,144,192,0.2); color: var(--c-partial); }
 .result-fail .results-icon { background: rgba(192,64,64,0.2); color: var(--c-fail); }
 

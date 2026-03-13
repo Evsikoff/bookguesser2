@@ -104,7 +104,7 @@ class Reader {
             menu.element.classList.toggle('show'))
         menu.groups.layout.select(gameMode ? 'scrolled' : 'paginated')
     }
-    async open(file) {
+    async open(file, initialFraction) {
         this.view = document.createElement('foliate-view')
         document.body.append(this.view)
         await this.view.open(file)
@@ -119,14 +119,25 @@ class Reader {
             })
         })
         this.view.renderer.setStyles?.(getCSS(this.style))
-        // In game mode, force scrolled layout before first render
-        if (gameMode) this.view.renderer.setAttribute('flow', 'scrolled')
-        this.view.renderer.next()
+        // In game mode, force scrolled layout and hide scrollbar before first render
+        if (gameMode) {
+            this.view.renderer.setAttribute('flow', 'scrolled')
+            this.view.renderer.setAttribute('no-scrollbar', '')
+        }
+        if (initialFraction != null) await this.view.init({ lastLocation: { fraction: initialFraction } })
+        else this.view.renderer.next()
 
         $('#header-bar').style.visibility = 'visible'
         $('#nav-bar').style.visibility = 'visible'
-        $('#left-button').addEventListener('click', () => this.view.goLeft())
-        $('#right-button').addEventListener('click', () => this.view.goRight())
+        if (gameMode) {
+            $('#left-button').ariaLabel = 'Scroll up'
+            $('#right-button').ariaLabel = 'Scroll down'
+            $('#left-button').addEventListener('click', () => this.view.prev())
+            $('#right-button').addEventListener('click', () => this.view.next())
+        } else {
+            $('#left-button').addEventListener('click', () => this.view.goLeft())
+            $('#right-button').addEventListener('click', () => this.view.goRight())
+        }
 
         const slider = $('#progress-slider')
         slider.dir = book.dir
@@ -219,12 +230,12 @@ class Reader {
     }
 }
 
-const open = async file => {
+const open = async (file, initialFraction) => {
     document.body.removeChild($('#drop-target'))
     const reader = new Reader()
     globalThis.reader = reader
     try {
-        await reader.open(file)
+        await reader.open(file, initialFraction)
     } catch (e) {
         console.error('Reader open failed:', e)
         if (gameMode) window.parent.postMessage({ type: 'bookLoadError', message: String(e) }, '*')
@@ -255,6 +266,8 @@ const params = new URLSearchParams(location.search)
 const fileParam = params.get('file')
 const url = fileParam ? `/data/files/${fileParam}` : params.get('url')
 const gameMode = params.get('game') === '1'
+const fractionParam = params.get('fraction')
+const initialFraction = fractionParam ? parseFloat(fractionParam) : null
 
 if (gameMode) {
     document.body.classList.add('game-mode')
@@ -268,5 +281,5 @@ if (gameMode) {
     })
 }
 
-if (url) open(url).catch(e => console.error(e))
+if (url) open(url, initialFraction).catch(e => console.error(e))
 else if (!gameMode) dropTarget.style.visibility = 'visible'

@@ -289,15 +289,21 @@ body {
 </div>
 <div id="nav-bar" class="toolbar">
     <button id="left-button" aria-label="Go left">
-        <svg class="icon" width="24" height="24" aria-hidden="true">
+        <svg class="icon icon-ltr" width="24" height="24" aria-hidden="true">
             <path d="M 15 6 L 9 12 L 15 18"/>
+        </svg>
+        <svg class="icon icon-game" width="24" height="24" aria-hidden="true">
+            <path d="M 6 15 L 12 9 L 18 15"/>
         </svg>
     </button>
     <input id="progress-slider" type="range" min="0" max="1" step="any" list="tick-marks">
     <datalist id="tick-marks"></datalist>
     <button id="right-button" aria-label="Go right">
-        <svg class="icon" width="24" height="24" aria-hidden="true">
+        <svg class="icon icon-ltr" width="24" height="24" aria-hidden="true">
             <path d="M 9 6 L 15 12 L 9 18"/>
+        </svg>
+        <svg class="icon icon-game" width="24" height="24" aria-hidden="true">
+            <path d="M 6 9 L 12 15 L 18 9"/>
         </svg>
     </button>
 </div>
@@ -308,6 +314,9 @@ body.game-mode #side-bar-button  { display: none !important; }
 body.game-mode #menu-button      { display: none !important; }
 body.game-mode #progress-slider  { display: none !important; }
 body.game-mode #header-bar       { display: none !important; }
+
+body:not(.game-mode) .icon-game  { display: none !important; }
+body.game-mode .icon-ltr         { display: none !important; }
 
 /* Larger, more prominent nav buttons for game mode */
 body.game-mode #nav-bar {
