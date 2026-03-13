@@ -213,7 +213,8 @@ class Reader {
         if (gameMode && !this.#bookLoadedSent) {
             this.#bookLoadedSent = true
             const sectionFractions = Array.from(this.view.getSectionFractions())
-            window.parent.postMessage({ type: 'bookLoaded', sectionFractions }, '*')
+            const totalLocations = location?.total ?? 0
+            window.parent.postMessage({ type: 'bookLoaded', sectionFractions, totalLocations }, '*')
         }
     }
 }

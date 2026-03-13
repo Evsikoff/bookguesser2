@@ -350,15 +350,12 @@ function selectNextBook() {
     return pool[Math.floor(Math.random() * pool.length)]
 }
 
-function computeStartFraction(sectionFractions) {
-    const P = sectionFractions.length
-    if (P < 3) return 0
-    const rangeStart = Math.floor(P / 3)
-    const rangeEnd   = Math.floor(P / 3 * 2)
-    const idx = rangeStart >= rangeEnd
-        ? rangeStart
-        : rangeStart + Math.floor(Math.random() * (rangeEnd - rangeStart + 1))
-    return sectionFractions[Math.min(idx, P - 1)]
+function computeStartFraction(totalLocations) {
+    const total = totalLocations >= 3 ? totalLocations : 300
+    const rangeStart = Math.floor(total / 3)
+    const rangeEnd   = Math.floor(total / 3 * 2)
+    const page = rangeStart + Math.floor(Math.random() * (rangeEnd - rangeStart + 1))
+    return page / total
 }
 
 // ===== AUDIO =====
@@ -609,11 +606,11 @@ async function loadReaderAndNavigate(book, knownFraction) {
 
     try {
         const msg = await waitForReaderMessage('bookLoaded')
-        const sections = msg.sectionFractions || []
+        const totalLocations = msg.totalLocations || 0
 
         let fraction = knownFraction
         if (fraction === null || fraction === undefined) {
-            fraction = computeStartFraction(sections)
+            fraction = computeStartFraction(totalLocations)
         }
         currentRound.startFraction = fraction
         playerData.currentRound.startFraction = fraction
