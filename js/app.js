@@ -131,7 +131,15 @@ async function init() {
     // Check promo flags
     const serverTime = ysdk.serverTime()
     try {
-        const flags = await ysdk.getFlags({ defaultFlags: { promostart: '', promostop: '' } })
+        const clientFeatures = []
+        try {
+            const payingStatus = player.getPayingStatus?.()
+            if (payingStatus) clientFeatures.push({ name: 'payingStatus', value: payingStatus })
+        } catch {}
+        const flags = await ysdk.getFlags({
+            defaultFlags: { promostart: '', promostop: '' },
+            clientFeatures,
+        })
         promoFlags = flags
         promoActive = checkPromoActive(flags, serverTime)
     } catch (e) {
