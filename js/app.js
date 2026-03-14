@@ -136,14 +136,18 @@ async function init() {
             const payingStatus = player.getPayingStatus?.()
             if (payingStatus) clientFeatures.push({ name: 'payingStatus', value: payingStatus })
         } catch {}
-        const flags = await ysdk.getFlags({
+        const getFlagsParams = {
             defaultFlags: { promostart: '', promostop: '' },
             clientFeatures,
-        })
+        }
+        console.log('[getFlags] calling with params:', JSON.stringify(getFlagsParams))
+        const flags = await ysdk.getFlags(getFlagsParams)
+        console.log('[getFlags] response:', JSON.stringify(flags))
         promoFlags = flags
         promoActive = checkPromoActive(flags, serverTime)
+        console.log('[getFlags] promoActive:', promoActive)
     } catch (e) {
-        console.warn('getFlags failed:', e)
+        console.warn('[getFlags] failed:', e)
     }
 
     // Load progress
