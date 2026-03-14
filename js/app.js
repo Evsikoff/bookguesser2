@@ -1105,35 +1105,49 @@ function setupEventListeners() {
         }
     })
 
-    // Reposition dropdown when virtual keyboard resizes viewport
+    // Reposition dropdown when virtual keyboard resizes or scrolls viewport
     if (window.visualViewport) {
         window.visualViewport.addEventListener('resize', positionSearchDropdown)
+        window.visualViewport.addEventListener('scroll', positionSearchDropdown)
     }
 }
 
 function positionSearchDropdown() {
     const dropdown = document.getElementById('search-dropdown')
-    if (!dropdown.classList.contains('open')) return
+    if (!dropdown || !dropdown.classList.contains('open')) return
     const group = document.querySelector('.search-input-group')
     if (!group) return
+
     const rect = group.getBoundingClientRect()
-    const vvh = window.visualViewport ? window.visualViewport.height : window.innerHeight
-    const isMobile = document.body.classList.contains('is-mobile')
+    const vv = window.visualViewport
+    const vvh = vv ? vv.height : window.innerHeight
+    const vvw = vv ? vv.width : window.innerWidth
+    const vvt = vv ? vv.offsetTop : 0
+    const vvl = vv ? vv.offsetLeft : 0
 
-    dropdown.style.left  = rect.left + 'px'
-    dropdown.style.right = (window.innerWidth - rect.right) + 'px'
-    dropdown.style.width = 'auto'
+    // Coordinates relative to visual viewport for position: fixed
+    const topInVV = rect.top - vvt
+    const bottomInVV = rect.bottom - vvt
+    const leftInVV = rect.left - vvl
 
-    if (isMobile) {
-        const top = rect.bottom
-        dropdown.style.top       = top + 'px'
+    dropdown.style.left  = leftInVV + 'px'
+    dropdown.style.width = rect.width + 'px'
+    dropdown.style.right = 'auto'
+
+    // Decide direction based on available space in visual viewport
+    const spaceBelow = vvh - bottomInVV
+    const spaceAbove = topInVV
+
+    if (spaceBelow >= spaceAbove || spaceBelow > 200) {
+        // Show below
+        dropdown.style.top       = bottomInVV + 'px'
         dropdown.style.bottom    = 'auto'
-        dropdown.style.maxHeight = Math.max(80, vvh - top - 8) + 'px'
+        dropdown.style.maxHeight = Math.max(80, spaceBelow - 10) + 'px'
     } else {
-        const bottom = vvh - rect.top
+        // Show above
         dropdown.style.top       = 'auto'
-        dropdown.style.bottom    = bottom + 'px'
-        dropdown.style.maxHeight = Math.max(80, rect.top - 8) + 'px'
+        dropdown.style.bottom    = (vvh - topInVV) + 'px'
+        dropdown.style.maxHeight = Math.max(80, spaceAbove - 10) + 'px'
     }
 }
 
@@ -1206,6 +1220,12 @@ function detectDevice() {
     } catch {
         isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent)
     }
+
+    // Also check pointer: coarse to stay in sync with CSS
+    if (!isMobile && window.matchMedia('(pointer: coarse)').matches) {
+        isMobile = true
+    }
+
     if (isMobile) {
         document.body.classList.add('is-mobile')
     }
