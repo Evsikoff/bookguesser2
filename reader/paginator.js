@@ -992,6 +992,8 @@ export class Paginator extends HTMLElement {
                     doc.head.append($style)
                     this.#styleMap.set(doc, [$styleBefore, $style])
                 }
+                doc.addEventListener('contextmenu', e => e.preventDefault())
+                if (doc.body) doc.body.style.setProperty('user-select', 'none', 'important')
                 onLoad?.({ doc, index })
             }
             const beforeRender = this.#beforeRender.bind(this)
