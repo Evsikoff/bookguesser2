@@ -832,7 +832,7 @@ function showAnswerScreen(book) {
     const coverWrap = document.getElementById('answer-cover-wrap')
     const coverImg  = document.getElementById('answer-cover')
     coverWrap.classList.add('hidden')
-    extractCoverFromFB2(`https://storage.yandexcloud.net/bookguesser/books/${book.file}`).then(src => {
+    extractCoverFromFB2(`/api/book?file=${encodeURIComponent(book.file)}`).then(src => {
         if (src) {
             coverImg.src = src
             coverWrap.classList.remove('hidden')
