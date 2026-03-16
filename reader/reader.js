@@ -264,7 +264,7 @@ $('#file-button').addEventListener('click', () => $('#file-input').click())
 const params = new URLSearchParams(location.search)
 // Support both ?url=<full_url> (standalone) and ?file=<filename>&game=1 (game mode)
 const fileParam = params.get('file')
-const url = fileParam ? `/data/files/${fileParam}` : params.get('url')
+const url = fileParam ? `https://storage.yandexcloud.net/bookguesser/books/${fileParam}` : params.get('url')
 const gameMode = params.get('game') === '1'
 const fractionParam = params.get('fraction')
 const initialFraction = fractionParam ? parseFloat(fractionParam) : null
