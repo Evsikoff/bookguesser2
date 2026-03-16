@@ -14,6 +14,7 @@ export default async function handler(req, res) {
     const contentType = upstream.headers.get('content-type') || 'application/octet-stream'
     res.setHeader('Content-Type', contentType)
     res.setHeader('Cache-Control', 'public, max-age=86400')
+    res.setHeader('Access-Control-Allow-Origin', '*')
 
     const buffer = await upstream.arrayBuffer()
     res.send(Buffer.from(buffer))
