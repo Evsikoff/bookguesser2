@@ -31,6 +31,12 @@ const getCSS = ({ spacing, justify, hyphenate }) => `
     [align="center"] { text-align: center; }
     [align="justify"] { text-align: justify; }
 
+    @media (min-width: 768px) {
+        html, body {
+            font-size: 150% !important;
+        }
+    }
+
     pre {
         white-space: pre-wrap !important;
     }
