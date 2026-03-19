@@ -156,8 +156,7 @@ async function init() {
     // Check energy restore
     await checkEnergyRestore()
 
-    // Check unprocessed purchases
-    checkUnprocessedPurchases().catch(() => {})
+    // Unprocessed purchases are checked inside loadPaymentsModule()
 
     // Subscribe to pause/resume events
     try {
@@ -222,6 +221,8 @@ async function loadPaymentsModule() {
         payments = createMockPayments()
         await fetchProductPrices()
     }
+    // Check unprocessed purchases right after payments init
+    checkUnprocessedPurchases().catch(() => {})
 }
 
 async function fetchProductPrices() {
