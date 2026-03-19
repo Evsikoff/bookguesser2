@@ -125,8 +125,8 @@ async function init() {
     // Load player
     await loadPlayer()
 
-    // Load payments (non-blocking)
-    loadPaymentsModule().catch(e => console.warn('Payments unavailable:', e))
+    // Load payments
+    await loadPaymentsModule().catch(e => console.warn('Payments unavailable:', e))
 
     // Check promo flags
     const serverTime = ysdk.serverTime()
@@ -156,7 +156,8 @@ async function init() {
     // Check energy restore
     await checkEnergyRestore()
 
-    // Unprocessed purchases are checked inside loadPaymentsModule()
+    // Check unprocessed purchases (after loadProgress so playerStats is ready)
+    await checkUnprocessedPurchases().catch(() => {})
 
     // Subscribe to pause/resume events
     try {
@@ -221,8 +222,6 @@ async function loadPaymentsModule() {
         payments = createMockPayments()
         await fetchProductPrices()
     }
-    // Check unprocessed purchases right after payments init
-    checkUnprocessedPurchases().catch(() => {})
 }
 
 async function fetchProductPrices() {
@@ -499,12 +498,18 @@ async function checkUnprocessedPurchases() {
     if (!payments) return
     try {
         const purchases = await payments.getPurchases()
+        let granted = false
         for (const p of purchases) {
             if (p.productID === 'energy_100' || p.productID === 'energy_100_promo') {
                 playerStats.energy += PURCHASE_ENERGY
+                granted = true
                 await saveProgress()
                 await payments.consumePurchase(p.purchaseToken)
             }
+        }
+        if (granted) {
+            updateEnergyDisplay()
+            updateModalEnergyDisplay()
         }
     } catch {}
 }
